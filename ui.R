@@ -1,5 +1,6 @@
 navbarPage(title=div(a(href="http://cabaceo.com",
 <<<<<<< HEAD
+<<<<<<< HEAD
                        img(src="Logo_01.png", id = "logo")), "tsplotr"),
            theme = "darkly1.css", 
            
@@ -7,6 +8,11 @@ navbarPage(title=div(a(href="http://cabaceo.com",
                        img(src="Logo_01.png", id = "logo")), "tsplot"),
            theme = "darkly1.css", 
 >>>>>>> 25cd7b42e3943126f70b35994a8a1452c8c01c94
+=======
+                       img(src="Logo_01.png", id = "logo")), "tsplotr"),
+           theme = "darkly1.css", 
+
+>>>>>>> dev
            tabPanel('Upload Data',
                     sidebarLayout(
                             sidebarPanel(
