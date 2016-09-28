@@ -1,4 +1,6 @@
-navbarPage("tsplotr", theme = "darkly1.css", 
+navbarPage(title=div(a(href="http://cabaceo.com",
+                       img(src="Logo_01.png", id = "logo")), "tsplotr"),
+           theme = "darkly1.css", 
            
            tabPanel('Upload Data',
                     sidebarLayout(
@@ -10,10 +12,10 @@ navbarPage("tsplotr", theme = "darkly1.css",
                                     fluidRow(column(5, 
                                                     sliderInput("n", "Slide me to change the number of rows on display", 10, 100, 10)
                                                     ),
-                                    column(5, offset = 2, 
-                                           uiOutput("column")
-                                           )
-                                    ),
+                                            column(5, offset = 2, 
+                                                   uiOutput("column")
+                                                   )
+                                            ),
                                     dataTableOutput("first100rows")
                                     )
                             )
