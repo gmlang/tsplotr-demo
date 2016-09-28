@@ -12,5 +12,4 @@ pick_seasonality = callModule(choose_var, "seasonality",
                               "Select the seasonality variable:", seasonality)
 
 # implement variable transformations
-pick_trans_y = callModule(choose_transformation, "trans_y", 
-                          "Select a transformation for y:")
+pick_trans_y = callModule(choose_transformation, "trans_y")
