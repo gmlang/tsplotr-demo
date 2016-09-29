@@ -14,3 +14,20 @@ df_resid = reactive({
         names(df)[3] = "residuals"
         df
 })
+
+# get r-squared
+df_rsqrd = reactive({
+        models() %>% glance(mod) %>% select_(pick_gp(), "r.squared")
+})
+
+# get coef estimates
+df_coefs = reactive({
+        models() %>% tidy(mod) %>%
+                filter(grepl("factor", term)) %>%
+                extract(term, pick_seasonality(), "(\\d+)", convert = TRUE)
+})
+
+# get max coef estimate
+df_maxcoef = reactive({
+        df_coefs() %>% group_by_(pick_gp()) %>% summarise(max_coef = max(estimate))
+})

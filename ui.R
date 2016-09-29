@@ -34,10 +34,15 @@ navbarPage(title=div(a(href="http://cabaceo.com",
                                     actionButton("show_trend", "Remove Seasonality")
                                     ),
                             mainPanel(
-                                    plotOutput("gg_ts", height="450", width="800"), 
-                                    br(),
-                                    plotOutput("gg_trend", height="450", width="800"), 
+                                    plotOutput("gg_ts", height="500", width="1025"), 
+                                    # br(),
+                                    # plotOutput("gg_trend", height="450", width="800"), 
+                                    br(), 
+                                    fluidRow(column(5, plotOutput("gg_rsqrd", height="500", width="500")),
+                                             column(5, 
+                                                    plotOutput("gg_maxcoef", height="500", width="500"))),
                                     br(), br()
+                                    
                                     )
                             )
                     )
