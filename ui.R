@@ -1,18 +1,7 @@
 navbarPage(title=div(a(href="http://cabaceo.com",
-<<<<<<< Updated upstream
-                       img(src="Logo_01.png", id = "logo")), "tsplotr - demo"),
-           theme = "darkly2.css", 
-=======
-<<<<<<< HEAD
-                       img(src="Logo_01.png", id = "logo")), "tsplotr"),
+                       img(src="Logo_01.png", id = "logo")), "tsplot"),
            windowTitle = "PlotR",
            theme = "darkly1.css", 
-=======
-                       img(src="Logo_01.png", id = "logo")), "tsplotr - demo"),
-           theme = "darkly2.css", 
->>>>>>> origin/dev
->>>>>>> Stashed changes
-
            tabPanel('Upload Data',
                     sidebarLayout(
                             sidebarPanel(
@@ -23,10 +12,10 @@ navbarPage(title=div(a(href="http://cabaceo.com",
                                     fluidRow(column(5, 
                                                     sliderInput("n", "Slide me to change the number of rows on display", 10, 100, 10)
                                                     ),
-                                            column(5, offset = 2, 
-                                                   uiOutput("column")
-                                                   )
-                                            ),
+                                    column(5, offset = 2, 
+                                           uiOutput("column")
+                                           )
+                                    ),
                                     dataTableOutput("first100rows")
                                     )
                             )
@@ -38,7 +27,7 @@ navbarPage(title=div(a(href="http://cabaceo.com",
                                     choose_var_ui("y"),
                                     choose_var_ui("x"),
                                     choose_var_ui("gp"),
-                                    choose_transformation_ui("trans_y", "Select a transformation for y:"),
+                                    choose_transformation_ui("trans_y"),
                                     actionButton("show_ts", "Show Plot"),
                                     br(), br(), br(),
                                     choose_var_ui("seasonality"),
