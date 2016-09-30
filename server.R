@@ -22,7 +22,8 @@ server = function(input, output) {
                 # plot raw time series plots
                 output$gg_ts = renderPlot({
                         # plt_ts is defined in R/helper
-                        plt_ts(dat, x, y, gp, trans_y) 
+                        p = plt_ts(dat, x, y, gp, trans_y) 
+                        web_display(p)
                 })
         })
         
@@ -39,7 +40,8 @@ server = function(input, output) {
                 dat_resid = df_resid()
                 output$gg_ts = renderPlot({
                         # plt_trend is defined in R/helper
-                        plt_trend(dat_resid, x, y="residuals", gp)
+                        p = plt_trend(dat_resid, x, y="residuals", gp)
+                        web_display(p)
                 })
                 
                 # plot r-squared by gp var
