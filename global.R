@@ -1,5 +1,6 @@
-library(broom)
+library(tidyr)
 library(dplyr)
+library(broom)
 library(shiny)
 library(DT) # load DT after shiny as we'll use DT's dataTableOutput() and renderDataTable()
 

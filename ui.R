@@ -2,9 +2,15 @@ navbarPage(title=div(a(href="http://cabaceo.com",
                        img(src="Logo_01.png", id = "logo")), "tsPlotR - demo"),
            windowTitle = "tsPlotR - demo",
            theme = "darkly2.css", 
+
            tabPanel('Upload Data',
                     sidebarLayout(
                             sidebarPanel(
+                                    h4("This app uses a data set and some R code from Hadley's", 
+                                       a("talk,", href="https://www.rstudio.com/resources/webinars/pipelines-for-data-analysis-in-r/",
+                                         target="_blank"), 
+                                       "which I highly recommend you to watch."),
+                                    br(),br(),
                                     choose_file_ui("datafile")
                                     ),
                             mainPanel(
