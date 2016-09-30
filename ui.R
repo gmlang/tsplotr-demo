@@ -2,6 +2,7 @@ navbarPage(title=div(a(href="http://cabaceo.com",
                        img(src="Logo_01.png", id = "logo")), "tsPlotR - demo"),
            windowTitle = "tsPlotR - demo",
            theme = "darkly2.css",
+           
            tabPanel('Upload Data',
                     sidebarLayout(
                             sidebarPanel(
@@ -47,7 +48,6 @@ navbarPage(title=div(a(href="http://cabaceo.com",
                                              column(5, 
                                                     plotOutput("gg_maxcoef", height="500", width="500"))),
                                     br(), br()
-                                    
                                     )
                             )
                     )
