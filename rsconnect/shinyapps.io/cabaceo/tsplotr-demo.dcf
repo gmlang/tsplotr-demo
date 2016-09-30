@@ -2,8 +2,8 @@ name: tsplotr-demo
 account: cabaceo
 server: shinyapps.io
 appId: 128356
-bundleId: 571160
+bundleId: 572680
 url: https://cabaceo.shinyapps.io/tsplotr-demo/
-when: 1475081993.86221
+when: 1475204173.28117
 asMultiple: FALSE
 asStatic: FALSE
