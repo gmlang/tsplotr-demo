@@ -2,8 +2,7 @@ navbarPage(title=div(a(href="http://cabaceo.com",
                        img(src="Logo_01.png", id = "logo")), "tsPlotR - demo"),
            windowTitle = "tsPlotR - demo",
            theme = "darkly2.css",
-           
-           
+
            tabPanel('Upload Data',
                     sidebarLayout(
                             sidebarPanel(
@@ -19,7 +18,7 @@ navbarPage(title=div(a(href="http://cabaceo.com",
                                     tags$script("(adsbygoogle = window.adsbygoogle || []).push({});")
                                     ),
                             
-                            mainPanel(
+                            mainPanel(id = "upload",
                                     verbatimTextOutput("datastruct"),
                                     fluidRow(column(5, 
                                                     sliderInput("n", "Slide me to change the number of rows on display", 10, 100, 10)
@@ -53,7 +52,7 @@ navbarPage(title=div(a(href="http://cabaceo.com",
                                     tags$script("(adsbygoogle = window.adsbygoogle || []).push({});")
                                     ),
                             
-                            mainPanel(
+                            mainPanel(id = "plot",
                                     plotOutput("gg_ts", height="500", width="1025"), 
                                     # br(),
                                     # plotOutput("gg_trend", height="450", width="800"), 

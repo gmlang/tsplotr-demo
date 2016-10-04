@@ -11,7 +11,6 @@ server = function(input, output) {
         # implement data prep (NA removal and etc.)
         source(file.path(server_path, "data-prep.R"), local = T)
         
-        
         observeEvent(input$show_ts, {
                 dat = rm_NAs()
                 x = pick_x() 
@@ -32,25 +31,16 @@ server = function(input, output) {
                 # remove seasonality
                 source(file.path(server_path, "rm-seasonality.R"), local = T)
                 
-                # get residuals and r-squared for lm(the response ~ seasonality)
-                withProgress(message = 'Removing Seasonality...', value = 0.4, {
-                        dat_resid = df_resid()
-                        incProgress(0.2)
-                        Sys.sleep(0.5)
-                        
-                        dat_rsqrd = df_rsqrd()
-                        incProgress(0.2)
-                        Sys.sleep(0.5)
-                        
-                        dat_maxcoef = df_maxcoef()
-                        incProgress(0.2)
-                        Sys.sleep(0.5)
-                })
+                # get residuals, r-squared and max coef for lm(the response ~ seasonality)
+                dat_resid = df_resid()
+                dat_rsqrd = df_rsqrd()
+                dat_maxcoef = df_maxcoef()
                 
                 # get user selected vars
                 x = pick_x() 
                 gp = pick_gp()
                 
+                # plot
                 withProgress(message = 'Plotting ', value = 0.4, {
                         
                         # plot general trend of the residuals 
