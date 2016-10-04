@@ -3,6 +3,7 @@ navbarPage(title=div(a(href="http://cabaceo.com",
            windowTitle = "tsPlotR - demo",
            theme = "darkly2.css",
            
+           
            tabPanel('Upload Data',
                     sidebarLayout(
                             sidebarPanel(
@@ -11,8 +12,13 @@ navbarPage(title=div(a(href="http://cabaceo.com",
                                          target="_blank"), 
                                        "which I highly recommend you to watch."),
                                     br(),br(),
-                                    choose_file_ui("datafile")
+                                    choose_file_ui("datafile"),
+                                    # insert google ads
+                                    tags$script(async="async", src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"),
+                                    includeHTML("www/google-ads-size-auto.html"),
+                                    tags$script("(adsbygoogle = window.adsbygoogle || []).push({});")
                                     ),
+                            
                             mainPanel(
                                     verbatimTextOutput("datastruct"),
                                     fluidRow(column(5, 
@@ -24,6 +30,7 @@ navbarPage(title=div(a(href="http://cabaceo.com",
                                     ),
                                     dataTableOutput("first100rows")
                                     )
+                            
                             )
                     ),
            
@@ -37,8 +44,15 @@ navbarPage(title=div(a(href="http://cabaceo.com",
                                     actionButton("show_ts", "Show Plot"),
                                     br(), br(), br(),
                                     choose_var_ui("seasonality"),
-                                    actionButton("show_trend", "Remove Seasonality")
+                                    actionButton("show_trend", "Remove Seasonality"),
+                                    br(), br(), br(),
+                                    
+                                    # insert google ads
+                                    tags$script(async="async", src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"),
+                                    includeHTML("www/google-ads-size-fixed.html"),
+                                    tags$script("(adsbygoogle = window.adsbygoogle || []).push({});")
                                     ),
+                            
                             mainPanel(
                                     plotOutput("gg_ts", height="500", width="1025"), 
                                     # br(),
@@ -49,6 +63,7 @@ navbarPage(title=div(a(href="http://cabaceo.com",
                                                     plotOutput("gg_maxcoef", height="500", width="500"))),
                                     br(), br()
                                     )
+                            
                             )
                     )
            )
